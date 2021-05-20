@@ -1,0 +1,116 @@
+:root {
+  --color-sedan: #e28525;
+  --color-suv: #016972;
+  --color-luxury: #00403f;
+  --color-text: #fff;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 500;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.cards {
+  max-width: 65rem;
+  margin: 0 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.cards__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 21rem;
+  padding: 3rem;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.cards__item svg {
+  width: 7rem;
+  height: 4rem;
+}
+
+.cards__item--1 {
+  background: var(--color-sedan);
+}
+
+.cards__item--2 {
+  background: var(--color-suv);
+}
+
+.cards__item--3 {
+  background: var(--color-luxury);
+}
+
+.cards__item > * + * {
+  margin-top: 4rem;
+}
+
+.cards__item :is(h2, p) {
+  color: var(--color-text);
+}
+
+.cards__item h2 {
+  font-size: 2.64rem;
+  text-transform: uppercase;
+}
+
+.cards__item p {
+  font-size: 1.6rem;
+  line-height: 1.66;
+  margin-bottom: 6rem;
+}
+
+.btn {
+  display: inline-block;
+  max-width: 20rem;
+  margin-top: auto;
+  border: 3ps solid var(--color-text);
+  border-radius: 10rem;
+  padding: 1em 3em;
+}
+/*# sourceMappingURL=main2.css.map */

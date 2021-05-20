@@ -1,0 +1,360 @@
+:root {
+  --clr-white: #fff;
+  --clr-black: #222;
+  --clr-grey: rgb(133, 131, 131);
+  --clr-orange: #f47b56;
+  --clr-link: rgb(175, 250, 244);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 2rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(186, 89, 250, 0.7)), to(rgba(35, 32, 170, 0.8)));
+  background-image: linear-gradient(to bottom, rgba(186, 89, 250, 0.7), rgba(35, 32, 170, 0.8));
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  max-width: 100rem;
+  margin: 2rem 10rem;
+  border-radius: 2rem;
+  background: var(--clr-white);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  overflow-y: scroll;
+  overflow: visible;
+}
+
+.section > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 45rem;
+          flex: 1 1 45rem;
+}
+
+.images {
+  position: relative;
+  min-height: 50rem;
+  background-repeat: no-repeat;
+}
+
+.text {
+  padding: 6rem 5rem;
+}
+
+.text > .text__item {
+  margin-top: 2rem;
+}
+
+.text__item {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  cursor: -webkit-grab;
+  cursor: grab;
+  border-bottom: 2px solid rgba(201, 198, 198, 0.2);
+  overflow: hidden;
+}
+
+.text__item.active .text-paragraphe {
+  height: 8rem;
+}
+
+.text__item.active .text-title img {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+  -webkit-transition: -webkit-transform 0.1s ease;
+  transition: -webkit-transform 0.1s ease;
+  transition: transform 0.1s ease;
+  transition: transform 0.1s ease, -webkit-transform 0.1s ease;
+}
+
+.text__item.active .text-title h3 {
+  text-shadow: 0 0 1px var(--clr-black);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+.text__item.active .text-title:hover {
+  color: var(--clr-black);
+}
+
+.text h1 {
+  margin-bottom: 2rem;
+}
+
+.text-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 1rem 0.5rem;
+}
+
+.text-title h3 {
+  font-size: 2rem;
+  font-weight: normal;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.text-title img {
+  height: 1.1rem;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
+}
+
+.text-title:hover {
+  color: var(--clr-orange);
+}
+
+.text-paragraphe {
+  position: relative;
+  height: 0;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  color: var(--clr-grey);
+  padding: 0 0.5rem;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.img-woman {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.img-woman img {
+  position: absolute;
+  bottom: 8rem;
+  left: -8rem;
+  z-index: 1;
+}
+
+.img-box {
+  position: absolute;
+  bottom: 11.4rem;
+  left: -9.2rem;
+  z-index: 3;
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
+}
+
+.img-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 45rem;
+  overflow: hidden;
+}
+
+.img-bg img {
+  position: absolute;
+  max-width: 80rem;
+  height: 80rem;
+  bottom: -10rem;
+  left: -41rem;
+  z-index: 0;
+}
+
+.attribution {
+  font-size: 1.3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--clr-orange);
+}
+
+.attribution a {
+  position: relative;
+  text-decoration: underline;
+  -webkit-text-decoration-color: var(--clr-link);
+          text-decoration-color: var(--clr-link);
+  color: var(--clr-white);
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+  white-space: nowrap;
+  z-index: 0;
+}
+
+.attribution a::before {
+  content: '';
+  position: absolute;
+  width: calc(100% + 0.3em);
+  height: 1.4rem;
+  left: -0.1em;
+  bottom: 0;
+  background-color: var(--clr-link);
+  border-radius: 0.3em;
+  -webkit-transform-origin: 0 95%;
+          transform-origin: 0 95%;
+  -webkit-transform: scale(1, 0.2);
+          transform: scale(1, 0.2);
+  opacity: 0.7;
+  z-index: -1;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+}
+
+.attribution a:hover {
+  outline: none;
+  color: var(--clr-white);
+}
+
+.attribution a:hover::before {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
+@media (max-width: 600px) {
+  body {
+    height: 100vh;
+  }
+  .section {
+    overflow: visible;
+    margin-top: 0;
+  }
+  .section > * {
+    all: initial;
+  }
+  .images {
+    position: relative;
+    height: 20rem;
+    width: 100%;
+    background: url("../images/bg-pattern-desktop.svg") left 10rem top 20rem;
+    background-size: 30rem;
+    background-repeat: no-repeat;
+    overflow: visible;
+  }
+  .images > * {
+    all: initial;
+  }
+  .img-woman {
+    overflow: visible;
+  }
+  .img-woman img {
+    position: absolute;
+    width: 70%;
+    top: -5%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .img-bg {
+    width: 100%;
+    overflow: visible;
+  }
+  .img-bg img {
+    width: 69%;
+    height: clamp(3rem, 44vw, 140%);
+    top: 6%;
+    left: 50%;
+    bottom: 0;
+    right: 0;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+  .img-box {
+    position: absolute;
+    top: clamp(-12%, 14em, -12.5%);
+    left: 13%;
+    z-index: 2;
+    -webkit-transition: -webkit-transform 0.6s ease;
+    transition: -webkit-transform 0.6s ease;
+    transition: transform 0.6s ease;
+    transition: transform 0.6s ease, -webkit-transform 0.6s ease;
+  }
+  .img-box img {
+    width: clamp(10%, 17vw, 10rem);
+  }
+  .text {
+    margin-top: -3rem;
+    padding: 0 2rem 4rem 2rem;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+  }
+  .text > .text__item {
+    margin-top: 0.5rem;
+  }
+  .text__item.active .text-paragraphe {
+    height: auto;
+  }
+  .text h1 {
+    display: block;
+    text-align: center;
+    font-size: 4rem;
+  }
+  .text-title h3 {
+    font-size: 1.6rem;
+  }
+  .text-title img {
+    width: 1rem;
+    height: 0.8rem;
+  }
+  .text-paragraphe {
+    font-size: 1.2rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */

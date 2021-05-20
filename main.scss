@@ -1,0 +1,368 @@
+:root {
+  --clr-white: #fff;
+  --clr-black: #222;
+  --clr-grey: rgb(133, 131, 131);
+  --clr-orange: #f47b56;
+  --clr-link: rgb(175, 250, 244);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+
+  font-size: 2rem;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: normal;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  min-height: 100vh;
+
+  background-image: linear-gradient(
+    to bottom,
+    (rgba(186, 89, 250, 0.7)),
+    (rgba(35, 32, 170, 0.8))
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.section {
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  max-width: 100rem;
+
+  margin: 2rem 10rem;
+
+  border-radius: 2rem;
+
+  background: var(--clr-white);
+
+  backface-visibility: hidden;
+
+  overflow-y: scroll;
+  overflow: visible;
+
+  & > * {
+    flex: 1 1 45rem;
+  }
+}
+
+.images {
+  position: relative;
+
+  min-height: 50rem;
+
+  background-repeat: no-repeat;
+}
+
+.text {
+  padding: 6rem 5rem;
+
+  & > &__item {
+    margin-top: 2rem;
+  }
+
+  &__item {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    cursor: grab;
+
+    border-bottom: 2px solid rgba(201, 198, 198, 0.2);
+
+    overflow: hidden;
+
+    &.active .text-paragraphe {
+      height: 8rem;
+    }
+
+    &.active .text-title img {
+      transform: rotateX(180deg);
+      transition: transform 0.1s ease;
+    }
+
+    &.active .text-title h3 {
+      text-shadow: 0 0 1px var(--clr-black);
+      transition: 0.5s ease-in-out;
+    }
+
+    &.active .text-title:hover {
+      color: var(--clr-black);
+    }
+  }
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  &-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    padding: 1rem 0.5rem;
+
+    h3 {
+      font-size: 2rem;
+      font-weight: normal;
+
+      transition: 0.2s ease-in-out;
+    }
+
+    img {
+      height: 1.1rem;
+      transition: transform 0.6s ease;
+    }
+
+    &:hover {
+      color: var(--clr-orange);
+    }
+  }
+
+  &-paragraphe {
+    position: relative;
+
+    height: 0;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 1.6rem;
+
+    color: var(--clr-grey);
+
+    padding: 0 0.5rem;
+
+    transition: all 0.5s;
+  }
+}
+
+.img-woman {
+  position: relative;
+
+  height: 100%;
+
+  overflow: hidden;
+  backface-visibility: hidden;
+
+  img {
+    position: absolute;
+    bottom: 8rem;
+    left: -8rem;
+    z-index: 1;
+  }
+}
+
+.img-box {
+  position: absolute;
+  bottom: 11.4rem;
+  left: -9.2rem;
+  z-index: 3;
+
+  transition: transform 0.6s ease;
+}
+
+.img-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 45rem;
+
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    max-width: 80rem;
+    height: 80rem;
+    bottom: -10rem;
+    left: -41rem;
+
+    z-index: 0;
+  }
+}
+
+.attribution {
+  font-size: 1.3rem;
+  text-align: center;
+
+  margin-bottom: 2rem;
+
+  color: var(--clr-orange);
+}
+
+.attribution a {
+  position: relative;
+
+  text-decoration: underline;
+  text-decoration-color: var(--clr-link);
+  color: var(--clr-white);
+
+  transition: color 0.5s;
+
+  white-space: nowrap;
+
+  z-index: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: calc(100% + 0.3em);
+    height: 1.4rem;
+    left: -0.1em;
+    bottom: 0;
+    background-color: var(--clr-link);
+    border-radius: 0.3em;
+    transform-origin: 0 95%;
+    transform: scale(1, 0.2);
+    opacity: 0.7;
+    z-index: -1;
+    transition: transform 0.2s ease-out;
+  }
+
+  &:hover {
+    outline: none;
+    color: var(--clr-white);
+
+    &::before {
+      transform: scale(1, 1);
+    }
+  }
+}
+
+///////////////////////MEDIA QUERIES/////////////////////////////
+@media (max-width: 600px) {
+  body {
+    height: 100vh;
+  }
+
+  .section {
+    overflow: visible;
+    margin-top: 0;
+  }
+
+  .section > * {
+    all: initial;
+  }
+
+  .images {
+    position: relative;
+
+    height: 20rem;
+    width: 100%;
+
+    background: url('../images/bg-pattern-desktop.svg') left 10rem top 20rem;
+    background-size: 30rem;
+    background-repeat: no-repeat;
+
+    overflow: visible;
+
+    & > * {
+      all: initial;
+    }
+  }
+
+  .img-woman {
+    overflow: visible;
+
+    img {
+      position: absolute;
+      width: 70%;
+      top: -5%;
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .img-bg {
+    width: 100%;
+    overflow: visible;
+
+    img {
+      width: 69%;
+      height: clamp(3rem, 44vw, 140%);
+      top: 6%;
+      left: 50%;
+      bottom: 0;
+      right: 0;
+
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .img-box {
+    position: absolute;
+    top: clamp(-12%, 14em, -12.5%);
+    left: 13%;
+    z-index: 2;
+
+    transition: transform 0.6s ease;
+
+    img {
+      width: clamp(10%, 17vw, 10rem);
+    }
+  }
+
+  .text {
+    margin-top: -3rem;
+    padding: 0 2rem 4rem 2rem;
+
+    backface-visibility: hidden;
+
+    & > &__item {
+      margin-top: 0.5rem;
+    }
+
+    &__item {
+      &.active .text-paragraphe {
+        height: auto;
+      }
+    }
+
+    & h1 {
+      display: block;
+      text-align: center;
+      font-size: 4rem;
+    }
+
+    &-title {
+      & h3 {
+        font-size: 1.6rem;
+      }
+
+      & img {
+        width: 1rem;
+        height: 0.8rem;
+      }
+    }
+
+    &-paragraphe {
+      font-size: 1.2rem;
+    }
+  }
+}
